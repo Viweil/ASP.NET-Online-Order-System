@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="Pages_Admin_AdminMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link type="text/css" rel="Stylesheet" href="../../Styles/Style2.css" />
+    <link type="text/css" rel="Stylesheet" href="../../Styles/Slider.css" />
+    <link type="text/css" rel="Stylesheet" href="../../Styles/Products.css" />
+    <link type="text/css" rel="Stylesheet" href="../../Styles/ddsmoothmenu.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="crazyhats_body_wrapper">
+                <div id="crazyhats_wrapper">
+                    <div id="crazyhats_header">
+                        <div id="site_title">
+                            <h1><a href="AdminIndex.aspx">Admin Management</a></h1>
+                        </div>
+                        <div id="header_right" style="padding-top:20px;">
+                      <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+                        </div>
+                       <div class="cleaner"></div>
+                    </div>
+                     <div id="crazyhats_main">
+                    	<div id="sidebar" class="float_l">
+        	                <div class="sidebar_box"><span class="bottom"></span>
+            	                <h3>Order Management</h3> 
+                                <div class="content"> 
+                	                <ul class="sidebar_list">
+                    	                <li class="first" style="text-align:center">
+                                            <asp:HyperLink ID="lnkWaiting" runat="server" NavigateUrl="OrderList.aspx?OrderList=01">Waiting</asp:HyperLink>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <asp:HyperLink ID="lnkShipped" runat="server" NavigateUrl="OrderList.aspx?OrderList=02">Shipped</asp:HyperLink>
+                                            </li>
+                                    <li class="last" style="text-align:center"></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="sidebar_box"><span class="bottom"></span>
+            	                <h3>Product Management</h3> 
+                                <div class="content"> 
+                	                <ul class="sidebar_list">
+                    	                <li class="first" style="text-align:center">
+                                            <asp:HyperLink ID="lnkProductAdd" runat="server" NavigateUrl="ProductAdd.aspx">Add Products</asp:HyperLink>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <asp:HyperLink ID="lnkProductManage" runat="server" NavigateUrl="ProductList.aspx">Manage</asp:HyperLink>
+                                        </li>
+                                        <li class="last" style="text-align:center">
+                                            <asp:HyperLink ID="lnkCategoryAdd" runat="server" NavigateUrl="CategoryAdd.aspx">Add Category</asp:HyperLink>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <asp:HyperLink ID="lnkCategoryManage" runat="server" NavigateUrl="CategoryList.aspx">Manage</asp:HyperLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="sidebar_box"><span class="bottom"></span>
+            	                <h3>Admin Management</h3> 
+                                <div class="content"> 
+                	                <ul class="sidebar_list">
+                    	                <li class="first" style="text-align:center">
+                                            <asp:HyperLink ID="lnkAdminAdd" runat="server" NavigateUrl="AdminAdd.aspx">Add Admins</asp:HyperLink>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <asp:HyperLink ID="lnkAdminManage" runat="server" NavigateUrl="AdminList.aspx">Manage</asp:HyperLink>
+                                            </li>
+                                    <li class="last" style="text-align:center"></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                             <div class="sidebar_box"><span class="bottom"></span>
+            	                <h3>Supplier Management</h3> 
+                                <div class="content"> 
+                	                <ul class="sidebar_list">
+                    	                <li class="first" style="text-align:center">
+                                            <asp:HyperLink ID="lnkSupplierAdd" runat="server" NavigateUrl="SupplierAdd.aspx">Add Supplier</asp:HyperLink>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <asp:HyperLink ID="lnkSupplierManage" runat="server" NavigateUrl="SupplierList.aspx">Manage</asp:HyperLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="sidebar_box"><span class="bottom"></span>
+            	                <h3>User Management</h3> 
+                                <div class="content"> 
+                	                <ul class="sidebar_list">
+                    	                <li class="first" style="text-align:center">
+                                          <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="UserList.aspx">Manage</asp:HyperLink>
+                                            
+                                            </li>
+                                    <li class="last" style="text-align:center"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder><div class="cleaner"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

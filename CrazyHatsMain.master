@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CrazyHatsMain.master.cs" Inherits="CrazyHatsMain"  %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <link type="text/css" rel="Stylesheet" href="Styles/Style2.css" />
+    <link type="text/css" rel="Stylesheet" href="Styles/Slider.css" />
+    <link type="text/css" rel="Stylesheet" href="Styles/Products.css" />
+    <link type="text/css" rel="Stylesheet" href="Styles/ddsmoothmenu.css" />
+    <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/ddsmoothmenu.js">
+
+
+
+</script>
+<%--<script type="text/javascript">
+
+        ddsmoothmenu.init({
+            mainmenuid: "top_nav", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+
+</script>--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="crazyhats_body_wrapper">
+            <div id="crazyhats_wrapper">
+                <div id="crazyhats_header">
+                    <div id="site_title">
+                        <h1>
+                             <asp:HyperLink ID="lnkDefault" runat="server" NavigateUrl="~/Default.aspx">Online Hats Store</asp:HyperLink></h1>
+                    </div>
+                    <div id="header_right">
+                        <p style="text-align:center">
+                           <strong><asp:Label ID="Label_Welcome" Text="" runat="server" ForeColor="White"></asp:Label></strong> </p>
+                           <p>     
+                            <asp:HyperLink ID="lnkShoppingCart" runat="server" NavigateUrl="~/Pages/User/ShoppingCart.aspx">My Shopping Cart</asp:HyperLink>
+                             &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <asp:HyperLink ID="lnkLogin" NavigateUrl="~/Pages/User/Login.aspx" Text="Login" runat="server"></asp:HyperLink>
+                            <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <asp:HyperLink ID="lnkRegister" NavigateUrl="~/Pages/User/Register.aspx" Text="Registration" 
+                            runat="server"></asp:HyperLink>
+                            <asp:HyperLink ID="lnkMyDetails" NavigateUrl="~/Pages/User/MyDetails.aspx" Text="My Account" 
+                            runat="server"></asp:HyperLink></p>
+                    </div>
+                    <div class="cleaner">
+                    </div>
+                </div>
+                <!-- END of crazyhats_header -->
+                <div id="crazyhats_menubar">
+                    <div id="top_nav" class="ddsmoothmenu">
+                        <ul>
+                            <li>
+                                <asp:HyperLink ID="Home" runat="server" 
+                                    NavigateUrl="Default.aspx" class="selected" >Home</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Products" runat="server"
+                                    NavigateUrl="~/Pages/User/Product.aspx">Products</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="About" runat="server" NavigateUrl="~/Pages/User/About.aspx" Target="_blank">About</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="ContactUs" runat="server" NavigateUrl="~/Pages/User/ContactUs.aspx" Target="_blank">Contact Us</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="FAQs" runat="server" NavigateUrl="~/Pages/Admin/AdminLogin.aspx" Target="_blank">Admin Login</asp:HyperLink></li>
+                        </ul>
+                        <br style="clear: left" />
+                    </div>
+                    <!-- end of ddsmoothmenu -->
+                    <div id="crazyhats_search">
+                        <form action="#" method="get">
+                        <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)"
+                            onblur="clearText(this)" class="txt_field" />
+                        <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search"
+                            class="sub_btn" />
+                        </form>
+                    </div>
+                </div>
+                <!-- END of crazyhats_menubar -->
+
+                <!-- Left side menu starts-->
+                 <div id="crazyhats_main">
+                    	<div id="sidebar" class="float_l">
+        	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>Categories</h3> 
+                <div class="content"> 
+                	<ul class="sidebar_list" >
+                    	<li class="first" style="padding:15px; ">
+                            <asp:DataList ID="dlCategory" runat="server" 
+                                OnItemCommand="dlCategory_ItemCommand" Font-Bold="True">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="btnCategory" runat="server" CommandName="select" CausesValidation="False"
+                                    CommandArgument='<%# DataBinder.Eval(Container.DataItem,"CategoryID") %>'>
+                                  <%# DataBinder.Eval(Container.DataItem, "CategoryName") %>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                                <SeparatorTemplate>
+                                    <br />
+                                </SeparatorTemplate>
+                            </asp:DataList>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+                   
+        <!-- End left side menu -->
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder><div class="cleaner"></div> </div>
+                <div id="crazyhats_footer">
+                    <p>
+                        <asp:HyperLink ID="lnkHomeDefault" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink> | 
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Pages/User/Product.aspx">Products</asp:HyperLink> | 
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Pages/User/About.aspx" Target="_blank">About</asp:HyperLink> | 
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Pages/User/ContactUs.aspx" Target="_blank">Contact Us</asp:HyperLink> | 
+                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Pages/Admin/AdminLogin.aspx" Target="_blank">Admin Login</asp:HyperLink>
+                    </p>
+                    Copyright (c) 2015 
+                </div>
+                <!-- END of crazyhats_footer -->
+            </div>
+            <!-- END of crazyhats_wrapper -->
+        </div>
+        <!-- END of crazyhats_body_wrapper -->
+    </div>
+    </form>
+</body>
+</html>

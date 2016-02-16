@@ -1,0 +1,4 @@
+C:\Users\NIKKI\Desktop\hyperdisc\10.11\asp_assignment\Model\Model\bin\Debug\Model.dll
+C:\Users\NIKKI\Desktop\hyperdisc\10.11\asp_assignment\Model\Model\bin\Debug\Model.pdb
+C:\Users\NIKKI\Desktop\hyperdisc\10.11\asp_assignment\Model\Model\obj\Debug\Model.dll
+C:\Users\NIKKI\Desktop\hyperdisc\10.11\asp_assignment\Model\Model\obj\Debug\Model.pdb
